@@ -1,25 +1,24 @@
-/**
- * Blink
- *
- * The basic Arduino example. Turns on a LED for one second,
- * then turns it off for one second, and so on...
- * On the Sparrow node, we use pin 11 because the green LED
- * is connected to it.
+/*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+ 
+  This example code is in the public domain.
  */
+ 
+// Pin 13 has an LED connected on most Arduino boards.
+// give it a name:
+int led = 13;
 
-#define ledPin 11               // LED is connected to pin 11
-
-
-void setup()                    // runs once, when the sketch starts
-{
-  pinMode(ledPin, OUTPUT);      // set LED pin as digital output
+// the setup routine runs once when you press reset:
+void setup() {                
+  // initialize the digital pin as an output.
+  pinMode(led, OUTPUT);     
 }
 
-void loop()                     // runs over and over again
-{
-  digitalWrite(ledPin, HIGH);   // LED on
-  delay(1000);                  // wait for 1 second
-  
-  digitalWrite(ledPin, LOW);    // LED off
-  delay(1000);                  // wait for 1 second
+// the loop routine runs over and over again forever:
+void loop() {
+  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);               // wait for a second
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);               // wait for a second
 }
